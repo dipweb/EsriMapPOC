@@ -1,0 +1,18 @@
+<div>
+  <mat-toolbar>
+    <span class="ciscoIcon"><img src="../assets/images/cisco_icon.png" alt="Cisco Icon" style="height: 35px;"></span>
+    <span class="headerTitle">Field Service</span>
+
+    <span class="cityPopulate">
+      <label for="Show City population">Show City population</label>
+      <input type="checkbox" [checked]="showCity" (click)="onSelectCity()">
+    </span>
+    <span>  <app-add-address></app-add-address></span>
+  </mat-toolbar>
+
+
+  <app-esri-map [showCity]="showCity" [center]="mapCenter" [basemap]="basemapType" [zoom]="mapZoomLevel"
+    (mapLoadedEvent)="mapLoadedEvent($event)">
+  </app-esri-map>
+
+</div>
